@@ -14,6 +14,8 @@ el juego de plataformas **COGOLLO**.
 | `secrets.h` | Tu red y clave reales. **No se sube a GitHub** |
 | `equipo_cam_oled/` | Segundo equipo simple: ESP32-CAM + OLED 0.96" + SHT30 |
 | `pruebas/test_pantalla_directo` | Prueba de la pantalla sin librerías |
+| `CHANGELOG.md` | Historial de cambios por versión y autor |
+| `CONTRIBUTING.md` | Reglas para programadores: ramas, commits y changelog |
 | `pruebas/test_diagnostico` | Prueba de placa, pantalla y sensor I2C |
 
 ## Librerías (Arduino IDE → Herramientas → Gestionar librerías)
