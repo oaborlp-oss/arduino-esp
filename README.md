@@ -12,6 +12,7 @@ el juego de plataformas **COGOLLO**.
 | `monitor_clima_cultivo.ino` | Firmware principal |
 | `secrets.example.h` | Plantilla de WiFi. Cópiala como `secrets.h` |
 | `secrets.h` | Tu red y clave reales. **No se sube a GitHub** |
+| `equipo_cam_oled/` | Segundo equipo simple: ESP32-CAM + OLED 0.96" + SHT30 |
 | `pruebas/test_pantalla_directo` | Prueba de la pantalla sin librerías |
 | `pruebas/test_diagnostico` | Prueba de placa, pantalla y sensor I2C |
 
@@ -88,6 +89,32 @@ Partition Scheme `16M Flash (3MB APP/9.9MB FATFS)` · USB CDC On Boot:
 | Amarillo (SCL) | G5 |
 
 No usar GPIO 19–20 (USB) ni 26–37 (flash/PSRAM en el N16R8).
+
+## Equipo simple: ESP32-CAM + OLED 0.96" (carpeta `equipo_cam_oled`)
+
+Muestra temperatura, humedad y VPD con etiquetas OK / ALTO / BAJO (rangos generales
+18–28 °C, 40–70 %, 0.4–1.6 kPa). Sin WiFi ni táctil. La cámara no se usa.
+
+**Herramientas:** Placa `AI Thinker ESP32-CAM`. Abre `equipo_cam_oled/equipo_cam_oled.ino`.
+
+OLED y SHT30 comparten el bus I2C (dos cables a cada pin):
+
+| Señal | ESP32-CAM | OLED | SHT30 |
+|---|---|---|---|
+| 3.3 V | 3V3 | VCC | Rojo |
+| GND | GND | GND | Negro |
+| SDA | GPIO 14 | SDA | Verde |
+| SCL | GPIO 15 | SCL | Amarillo |
+
+**Subir el código:** la ESP32-CAM no trae USB.
+
+- Con base **ESP32-CAM-MB**: conecta el USB de la base y sube normal. Si queda en
+  `Connecting...`, mantén IO0, pulsa RST y suelta IO0.
+- Con adaptador **USB-TTL** (5 V): TX→U0R, RX→U0T, 5V→5V, GND→GND y un puente
+  **GPIO0→GND** para subir. Después quita el puente y pulsa RST.
+
+Alimentación: 5 V con buena corriente (cargador USB 5 V 1 A). Con poca corriente la
+ESP32-CAM se reinicia ("Brownout detector").
 
 ## WiFi
 
