@@ -1,0 +1,14 @@
+# Credenciales WiFi (nunca subir)
+secrets.h
+
+# Compilaciones del Arduino IDE / arduino-cli
+build/
+*.bin
+*.elf
+*.map
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
