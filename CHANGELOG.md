@@ -15,6 +15,14 @@ y el autor (`@usuario-de-github`). Cómo agregar entradas: ver [CONTRIBUTING.md]
 ## [Sin publicar]
 
 ### Agregado
+- **[Monitor]** Pantalla "En vivo" rediseñada con medidores circulares para temperatura,
+  humedad y VPD, franja inferior con tendencia del VPD de las últimas 6 h y estado de las
+  luces, y contador de alertas. — @oaborlp-oss
+- **[Monitor]** Menú inferior con 4 botones con íconos. — @oaborlp-oss
+- **[Monitor]** Juego COGOLLO ampliado a 3 mundos: El indoor (con maceta-portal al subsuelo),
+  La mata (nivel vertical) e Invernadero de noche, con jefe final Reina Araña. Nuevos
+  enemigos (pulgón, mosquito), poder de agua y riego de brotes que forman escaleras de
+  hojitas. — @oaborlp-oss
 - **[Docs]** CHANGELOG.md, CONTRIBUTING.md, plantilla de Pull Request y verificación
   automática de que cada Pull Request actualice el changelog. — @oaborlp-oss
 
